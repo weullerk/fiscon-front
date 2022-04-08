@@ -2,7 +2,7 @@
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="nome" class="form-label">Nome</label>
-      <input type="email" class="form-control" id="nome" formControlName="nome">
+      <input type="text" class="form-control" id="nome" formControlName="nome">
       <div
         *ngIf="userForm.controls['nome'].errors && userForm.controls['nome'].errors['required']
                 && (userForm.controls['nome'].dirty || userForm.controls['nome'].touched)"
@@ -14,7 +14,7 @@
     </div>
     <div class="mb-3">
       <label for="telefone" class="form-label">Telefone</label>
-      <input type="email" class="form-control" id="telefone" formControlName="telefone" mask="(00) 00000-0000">
+      <input type="text" class="form-control" id="telefone" formControlName="telefone" mask="(00) 00000 - 0000">
       <div
         *ngIf="userForm.controls['telefone'].errors && userForm.controls['telefone'].errors['required']
                 && (userForm.controls['telefone'].dirty || userForm.controls['telefone'].touched)"

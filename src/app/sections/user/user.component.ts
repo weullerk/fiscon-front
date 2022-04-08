@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IUser} from "../../interfaces/IUser";
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  users: IUser[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onNewUser(user: IUser) {
+    this.users = [...this.users, user];
   }
 
 }

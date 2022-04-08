@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from "@angular/forms";
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import {MatTableModule} from '@angular/material/table';
+
+import { UserComponent } from './sections/user/user.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
-import { UserComponent } from './sections/user/user.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -28,7 +30,8 @@ const maskConfig: Partial<IConfig> = {
     BrowserAnimationsModule,
     NgbModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(maskConfig)
+    NgxMaskModule.forRoot(maskConfig),
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
