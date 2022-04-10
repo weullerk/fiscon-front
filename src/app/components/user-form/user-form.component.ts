@@ -1,6 +1,8 @@
 import {Component, OnInit, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import {FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 import {IUser} from '../../interfaces/IUser';
+import * as moment from "moment";
+
 
 @Component({
   selector: 'app-user-form',
@@ -16,7 +18,11 @@ export class UserFormComponent {
   });
 
   onSubmit() {
-    this.newUserEvent.emit(this.userForm.value);
+    let user: IUser = this.userForm.value;
+    user.index = moment();
+
+    this.newUserEvent.emit(user);
+    this.userForm.reset();
   }
 
   onClean() {

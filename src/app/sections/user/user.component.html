@@ -13,7 +13,10 @@
   <div class="row mt-3">
     <div class="container">
       <h2>Listagem de Usuários</h2>
-      <app-user-table [users]="users"></app-user-table>
+      <app-user-table
+        [users]="users"
+        (userRemoved)="onUserRemoved($event)">
+      </app-user-table>
     </div>
   </div>
 </div>
